@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">sekarya-mobile-app</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="search_hint">Cari Disini</string>
+    <string name="hire">Hire</string>
+    <string name="profile">Profile</string>
+    <string name="reset_your_password">Reset your password</string>
+    <string name="desc_reset_password">Please enter your email and we will send an OTP code in the next step to reset your password.</string>
+    <string name="example_email">example@gmail.com</string>
+    <string name="email">Email</string>
+    <string name="lanjut">Continue</string>
+    <string name="otp_code_verification">OTP code verification</string>
+    <string name="desc_otp_verif">We have sent an OTP code to your email example@gmail.com. Enter the OTP code below to verify.</string>
+    <string name="didn_t_receive_email">Didn’t receive email?</string>
+    <string name="you_can_resend_code_in">You can resend code in</string>
+    <string name="_55">55 s</string>
+    <string name="create_new_password">Create new password</string>
+    <string name="desc_new_pass">Create new password if you forget it, then you have to do forgot password.</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="create">Create</string>
+    <string name="art_of_the_week">Art of The Week</string>
+    <string name="name">Name</string>
+    <string name="user_name">User Name</string>
+    <string name="image_card_home">Image Card Home</string>
+    <string name="example_name">dream_art</string>
+    <string name="image_card_user">Image card User</string>
 </resources>
