@@ -26,13 +26,13 @@
             android:src="@drawable/ic_fav"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="28dp"
-            android:layout_gravity="top||end"/>
+            android:layout_gravity="end"/>
         
         <ImageView
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/creator"
-            android:layout_gravity="bottom||start"
+            android:layout_gravity="bottom"
             android:contentDescription="@string/image_card_user"/>
 
         <TextView
