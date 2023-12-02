@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">sekarya-mobile-app</string>
+    <string name="sekarya">SEKARYA</string>
+    <string name="dummyText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="log_In">Log In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create account</string>
+    <string name="ca_sub">Fill the form for your new account</string>
+    <string name="username">Username</string>
+    <string name="do_you_already_have_an_account">do you already have an account?</string>
+
 </resources>
