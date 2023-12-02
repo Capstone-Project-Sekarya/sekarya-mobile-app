@@ -26,4 +26,25 @@
     <string name="image_card_home">Image Card Home</string>
     <string name="example_name">dream_art</string>
     <string name="image_card_user">Image card User</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="continu">Continue</string>
+    <string name="upload">Upload</string>
+    <string name="upload_your_human_artwork">Upload Your Human Artwork</string>
+    <string name="aI_generated_art_would_be_declined">AI Generated Art would be declined</string>
+    <string name="terms_and_condition">Terms and Condition</string>
+    <string name="terms_and_condition_description">
+        \n- Minimum 1600px width recommended
+        \n- Max 5MB for each file
+        \n- High resolution images (png, jpg, gif)
+        \n- Only upload media you own the rights to
+        \n<b>- Upload Your Human-made Artwork</b>>
+        \n<b>- Our Engine will decline an AI artwork</b>
+    </string>
+    <string name="give_me_a_name">Give me a name</string>
+    <string name="description">Description</string>
+    <string name="tags"><b>Tags</b>(maximum 20)</string>
+    <string name="open_for_commission_job">Open for Commission Job</string>
+    <string name="add_tags">Add Tags....</string>
+    <string name="description_hint">Write  any details you’d like to mention</string>
 </resources>
