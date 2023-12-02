@@ -43,7 +43,7 @@
     </string>
     <string name="give_me_a_name">Give me a name</string>
     <string name="description">Description</string>
-    <string name="tags"><b>Tags</b>(maximum 20)</string>
+    <string name="tags"><b>Tags</b>(maximum 3)</string>
     <string name="open_for_commission_job">Open for Commission Job</string>
     <string name="add_tags">Add Tags....</string>
     <string name="description_hint">Write  any details you’d like to mention</string>

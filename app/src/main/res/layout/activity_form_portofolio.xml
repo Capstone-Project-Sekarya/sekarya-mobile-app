@@ -64,22 +64,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/ti_tittle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:padding="0sp"
         android:text="@string/give_me_a_name"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textColorHint="@color/black"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093">
-    </Button>
+        app:layout_constraintVertical_bias="0.104">
+
+    </com.google.android.material.textfield.TextInputEditText>
 
     <ImageView
         android:id="@+id/imageView"
@@ -97,12 +98,13 @@
         android:layout_height="wrap_content"
         android:text="@string/description"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521"></TextView>
+        app:layout_constraintVertical_bias="0.979"></TextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -134,25 +136,45 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742"></TextView>
+        app:layout_constraintVertical_bias="0.738"></TextView>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_tags"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837">
+        app:layout_constraintVertical_bias="0.821">
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.appcompat.widget.AppCompatEditText>
+            android:layout_height="50dp"
+            android:paddingStart="10dp"
+            >
+        </AutoCompleteTextView>
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintVertical_bias="0.626">
+        <!-- Chip akan ditambahkan secara dinamis di dalam kode Java -->
+
+    </com.google.android.material.chip.ChipGroup>
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -160,7 +182,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:layout_width="0dp"
@@ -173,7 +195,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:thumbTint="?attr/colorPrimary"
-            app:trackTint="@color/light_purple"></androidx.appcompat.widget.SwitchCompat>
+            app:trackTint="@color/light_purple">
+
+        </androidx.appcompat.widget.SwitchCompat>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
