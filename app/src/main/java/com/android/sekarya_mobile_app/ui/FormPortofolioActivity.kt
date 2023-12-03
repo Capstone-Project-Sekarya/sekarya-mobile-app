@@ -1,9 +1,11 @@
 package com.android.sekarya_mobile_app.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.android.sekarya_mobile_app.MainActivity
 import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.databinding.ActivityFormPortofolioBinding
 import com.google.android.material.chip.Chip
@@ -38,6 +40,10 @@ class FormPortofolioActivity : AppCompatActivity() {
 
         }
 
+
+//        cencel handler
+        goToHome()
+
     }
 
     private fun addChip(tag: String) {
@@ -51,6 +57,13 @@ class FormPortofolioActivity : AppCompatActivity() {
     }
 
 
+    private fun goToHome(){
+        binding.btnCencel.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+    }
 
 
 }
