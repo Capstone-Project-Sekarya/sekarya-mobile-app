@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.sekarya_mobile_app.R
+import android.widget.Toast
+import com.android.sekarya_mobile_app.custom_view.CustomDialog
 import com.android.sekarya_mobile_app.databinding.FragmentCreatePortofolioBinding
 
 class CreatePortofolioFragment : Fragment() {
@@ -31,7 +31,9 @@ class CreatePortofolioFragment : Fragment() {
             // Memanggil metode untuk berpindah ke activity target
             goToTargetActivity()
         }
+
     }
+
 
     private fun goToTargetActivity() {
         val intent = Intent(activity, FormPortofolioActivity::class.java)

@@ -7,16 +7,19 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.android.sekarya_mobile_app.MainActivity
 import com.android.sekarya_mobile_app.R
+import com.android.sekarya_mobile_app.custom_view.CustomDialog
 import com.android.sekarya_mobile_app.databinding.ActivityFormPortofolioBinding
 import com.google.android.material.chip.Chip
 
 class FormPortofolioActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityFormPortofolioBinding
+    private lateinit var customDialog: CustomDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormPortofolioBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         // Daftar tag yang tersedia
         val tagOptions = arrayOf("Tag1", "Tag2", "Tag3", "Tag4")
@@ -40,9 +43,11 @@ class FormPortofolioActivity : AppCompatActivity() {
 
         }
 
-
-//        cencel handler
+//        cancel handler
         goToHome()
+//        save handler
+        save()
+
 
     }
 
@@ -56,6 +61,21 @@ class FormPortofolioActivity : AppCompatActivity() {
         binding.chipGroup.addView(chip)
     }
 
+//  save handler
+
+    private fun save(){
+        binding.btnSave.setOnClickListener{
+            val customDialog = CustomDialog(this)
+            customDialog.show()
+            customDialog.setImageResource(R.drawable.ic_detect_art)
+            customDialog.setTitle("Popup Title")
+            customDialog.setDescription("Popup Description")
+            customDialog.setLoadingIndicatorVisible(true)
+
+//            customDialog.dismiss() -> popup dialog gone
+
+        }
+    }
 
     private fun goToHome(){
         binding.btnCencel.setOnClickListener{
@@ -64,6 +84,7 @@ class FormPortofolioActivity : AppCompatActivity() {
         }
 
     }
+
 
 
 }
