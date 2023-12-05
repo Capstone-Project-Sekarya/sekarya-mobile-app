@@ -6,4 +6,11 @@
     <color name="green">#47BC1E</color>
     <color name="secondary">#605DEC</color>
     <color name="light_purple">#E9AEF3</color>
+    <color name="gray">#EAEAEA</color>
+    <color name="md_theme_light_secondary">#F6CBFC</color>
+    <color name="md_theme_dark_secondary">#F6CBFC</color>
+    <color name="md_theme_light_secondary_child">#6640EE</color>
+    <color name="md_theme_dark_secondary_child">#6640EE</color>
+    <color name="md_theme_light_thirdy">#E8671E</color>
+    <color name="md_theme_dark_thirdy">#E8671E</color>
 </resources>
