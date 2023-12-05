@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.view
+package com.android.sekarya_mobile_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

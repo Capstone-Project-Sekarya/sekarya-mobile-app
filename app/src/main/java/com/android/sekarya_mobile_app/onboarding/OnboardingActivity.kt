@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.view.onboarding
+package com.android.sekarya_mobile_app.onboarding
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +11,7 @@ import android.widget.LinearLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.model.OnboardingPage
-import com.android.sekarya_mobile_app.view.LogInActivity
+import com.android.sekarya_mobile_app.LogInActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -25,9 +25,9 @@ class OnboardingActivity : AppCompatActivity() {
 
 
     private val onboardingPages = listOf(
-        OnboardingPage(R.drawable.image1, "Title 1", "Description 1"),
-        OnboardingPage(R.drawable.image2, "Title 2", "Description 2"),
-        OnboardingPage(R.drawable.image3, "Title 3", "Description 3")
+        OnboardingPage(R.drawable.undraw_art_museum_, "Welcome to Global Art Exhibition 1", "This app will help you out navigate a both physical and virtual parts of exhibition.1"),
+        OnboardingPage(R.drawable.undraw_making_art_, "Welcome to Global Art Exhibition2", "This app will help you out navigate a both physical and virtual parts of exhibition.2"),
+        OnboardingPage(R.drawable.undraw_art_lover_, "Welcome to Global Art Exhibition 3", "This app will help you out navigate a both physical and virtual parts of exhibition. 3")
     )
 
 

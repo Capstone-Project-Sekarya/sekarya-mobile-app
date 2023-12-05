@@ -5,12 +5,34 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot password?</string>
-    <string name="log_In">Log In</string>
+    <string name="log_In">Sign In</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="create_account">Create account</string>
     <string name="ca_sub">Fill the form for your new account</string>
     <string name="username">Username</string>
     <string name="do_you_already_have_an_account">do you already have an account?</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="enter_password">Please enter your email &amp; password to sign in</string>
+    <string name="onboarding_tittle">Welcome to Global Art Exhibition</string>
+    <string name="onboarding_description">This app will help you out navigate a both physical and virtual parts of exhibition.</string>
+    <string name="register_tittle">Hello there</string>
+    <string name="register_guide">Please enter your email and password to crate an account.</string>
+    <string name="account">Already have an account?</string>
+    <string name="personal">Enter personal info</string>
+    <string name="fullname">Full Name </string>
+    <string name="phone">Phone Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="skip">Skip</string>
+    <string name="nickname">Nickname</string>
+    <string name="pronouns">Pronouns</string>
+    <string name="bio">Bio</string>
+    <string name="finish">Finish</string>
+    <string name="public_profile_tittle">Create public profile</string>
+    <string name="public_profile_description">This username and profile will be a unique identity so people can find you and the artwork you share in the community.</string>
+    <string name="cont">Continue</string>
+    <string name="personal_description">Please enter your profile. Don’t worry, only you can see your personal data. No one else will be able to see it. Or you can skip it for now. </string>
+
 
 </resources>

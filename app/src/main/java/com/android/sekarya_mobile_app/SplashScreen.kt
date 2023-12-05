@@ -1,15 +1,12 @@
-package com.android.sekarya_mobile_app.view
+package com.android.sekarya_mobile_app
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.util.Log
-import android.view.View
-import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.databinding.ActivitySplashScreenBinding
-import com.android.sekarya_mobile_app.view.onboarding.OnboardingActivity
+import com.android.sekarya_mobile_app.onboarding.OnboardingActivity
 
 class SplashScreen : AppCompatActivity() {
 

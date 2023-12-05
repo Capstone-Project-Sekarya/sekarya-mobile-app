@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.view
+package com.android.sekarya_mobile_app
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,11 +15,28 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         toLogin()
+        backButton()
+        signUpButton()
     }
 
     fun toLogin(){
-        binding.tvLoginRight.setOnClickListener(){
+        binding.tvSignIn.setOnClickListener(){
             val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    fun backButton(){
+        binding.ivBack.setOnClickListener(){
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+
+    fun signUpButton(){
+        binding.btnSignUp.setOnClickListener(){
+            val intent = Intent(this, InfoPersonalActivity::class.java)
             startActivity(intent)
         }
     }

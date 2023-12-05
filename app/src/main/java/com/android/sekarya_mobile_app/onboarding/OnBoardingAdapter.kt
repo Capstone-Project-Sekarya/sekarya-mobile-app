@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.view.onboarding
+package com.android.sekarya_mobile_app.onboarding
 
 import android.view.LayoutInflater
 import android.view.View
@@ -23,12 +23,12 @@ class OnBoardingAdapter(private val onboardingPages: List<OnboardingPage>) : Rec
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): OnBoardingAdapter.OnboardingViewHolder {
+    ): OnboardingViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.onboarding_screen, parent, false)
         return OnboardingViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: OnBoardingAdapter.OnboardingViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: OnboardingViewHolder, position: Int) {
         val onboardingPage = onboardingPages[position]
         holder.imageView.setImageResource(onboardingPage.imageResId)
         holder.textViewTitle.text = onboardingPage.title

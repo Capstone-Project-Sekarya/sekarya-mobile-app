@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".view.onboarding.OnboardingActivity">
+    tools:context=".onboarding.OnboardingActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -25,13 +25,19 @@
         app:tabIndicatorHeight="4dp"
         app:tabTextColor="@android:color/white"/>
 
-    <Button
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
         android:layout_marginStart="150dp"
-        android:text="Get Started"/>
+        app:cornerRadius="6dp"
+        android:text="Get Started"
+        >
+
+    </com.google.android.material.button.MaterialButton>
 
 
     <LinearLayout

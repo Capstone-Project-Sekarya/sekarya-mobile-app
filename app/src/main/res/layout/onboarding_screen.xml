@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="16dp"
     >
     <ImageView
         android:id="@+id/imageView"
@@ -16,19 +17,18 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Onboarding Title"
+        android:text="@string/onboarding_tittle"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"/>
 
     <TextView
+        android:textAlignment="center"
         android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Onboarding Description"
+        android:text="@string/onboarding_description"
         android:textSize="16sp"
         android:layout_marginTop="8dp"/>
-
-
 
 </LinearLayout>
