@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.Sekaryamobileapp" parent="Base.Theme.Sekaryamobileapp" />
+
+    <style name="Button.OutlineBox" parent="Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <style name="image_clickable">
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
 </resources>

@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/favorite"
-        android:icon="@drawable/ic_favorite"
+        android:icon="@drawable/ic_fav_navbar"
         android:title="@string/favorite"
         app:showAsAction="ifRoom"/>
 

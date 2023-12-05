@@ -26,4 +26,25 @@
     <string name="image_card_home">Image Card Home</string>
     <string name="example_name">dream_art</string>
     <string name="image_card_user">Image card User</string>
+    <string name="favorite_saya">Favorite Saya</string>
+    <string name="title_home">Title Home</string>
+    <string name="title_favorite">Title Favorite</string>
+    <string name="title_popup">Kisah Sangkuriang</string>
+    <string name="username_popup">Tatang Studio</string>
+    <string name="available_for_work">Available for work</string>
+    <string name="home_popup_desc">Hey Guys I\'m glad to share a new project with you</string>
+    <string name="home_popup_desc_2">Cooperation can be contacted Email: hafiryamun88@gmail.com If you like, you can also follow me on instagram</string>
+    <string name="work_with_me">Work with me</string>
+    <string name="work_with_the_artist">Work with the Artist</string>
+    <string name="captain_art">Captain Art</string>
+    <string name="posted_2hr_ago">Posted 2hr Ago</string>
+    <string name="people_art_ncostume_art">People Art \nCostume Art</string>
+    <string name="remote_friendly">Remote Friendly</string>
+    <string name="_100_portofolio">100+ Portofolio</string>
+    <string name="start_idr_300k">Start IDR 300K</string>
+    <string name="button_favorite">Button Favorite</string>
+    <string name="button_bookmark">Button Bookmark</string>
+    <string name="button_message">Button Message</string>
+    <string name="button_cart">Button Cart</string>
+    <string name="button_notifications">Button Notifications</string>
 </resources>
