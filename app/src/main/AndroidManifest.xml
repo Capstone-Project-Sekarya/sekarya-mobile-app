@@ -23,9 +23,6 @@
             android:name=".onboarding.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".onboarding.OnboardingActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -55,7 +52,8 @@
             android:name=".MainActivity"
             android:exported="false">
         </activity>
-        <activity android:name="com.android.sekarya_mobile_app.ui.NavigationActivity" />
+        <activity android:name="com.android.sekarya_mobile_app.ui.NavigationActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

@@ -103,6 +103,7 @@
     <string name="public_profile_description">This username and profile will be a unique identity so people can find you and the artwork you share in the community.</string>
     <string name="cont">Continue</string>
     <string name="personal_description">Please enter your profile. Don’t worry, only you can see your personal data. No one else will be able to see it. Or you can skip it for now. </string>
+    <string name="title_create">Title Create</string>
 
 
 </resources>
