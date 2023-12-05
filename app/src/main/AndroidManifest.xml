@@ -36,6 +36,7 @@
             android:name=".MainActivity"
             android:exported="false">
         </activity>
+        <activity android:name="com.android.sekarya_mobile_app.ui.NavigationActivity" />
     </application>
 
 </manifest>

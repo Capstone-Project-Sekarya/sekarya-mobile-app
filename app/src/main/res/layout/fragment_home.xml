@@ -22,6 +22,7 @@
             android:layout_height="42dp"
             android:src="@drawable/ic_cart"
             android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="23dp"
             android:contentDescription="@string/button_cart"/>
 
         <ImageView
@@ -29,6 +30,7 @@
             android:layout_height="42dp"
             android:src="@drawable/ic_notif"
             android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="23dp"
             android:contentDescription="@string/button_notifications"/>
 
     </LinearLayout>
