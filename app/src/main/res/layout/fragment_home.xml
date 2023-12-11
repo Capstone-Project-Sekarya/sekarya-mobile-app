@@ -107,20 +107,13 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:listitem="@layout/list_tag_home"
-                    app:spanCount="5"
-                    tools:itemCount="5"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
-
-            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:listitem="@layout/list_tag_home"
+                tools:itemCount="10"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         </LinearLayout>
 

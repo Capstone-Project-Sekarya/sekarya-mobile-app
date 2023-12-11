@@ -112,6 +112,16 @@
     <string name="deliver_in_7_days">Deliver in 7 Days</string>
     <string name="post_job">Post Job</string>
     <string name="el_gato">El Gato</string>
+    <string name="fanarts">Fanarts</string>
+    <string name="illustrations">Illustrations</string>
+    <string name="product">Product</string>
+    <string name="brand">Brand</string>
+    <string name="idr_100k_300k">IDR 100K - 300K</string>
+    <string name="hire_detail_desc">I will make a Fanart based on Anime that can costum by your order. The Art was Potrait and Landscape.</string>
+    <string name="hire_stock">Delivery : 14 Days \nRevision : 3 Times \nType Files : PSD, AI, JPG, PNG \nSlots Availability : 3</string>
+    <string name="tag_for_this_art">Tag For This Art</string>
+    <string name="other_for_this_artist">Other for this Artist</string>
+    <string name="order_this_commission">Order this commission</string>
 
 
 </resources>
