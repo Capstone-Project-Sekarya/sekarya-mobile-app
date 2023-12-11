@@ -2,7 +2,7 @@
     <string name="app_name">sekarya-mobile-app</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
-    <string name="search_hint">Cari Disini</string>
+    <string name="search_hint">Search Artist or Job</string>
     <string name="hire">Hire</string>
     <string name="profile">Profile</string>
     <string name="reset_your_password">Reset your password</string>
@@ -103,6 +103,15 @@
     <string name="cont">Continue</string>
     <string name="personal_description">Please enter your profile. Don’t worry, only you can see your personal data. No one else will be able to see it. Or you can skip it for now. </string>
     <string name="title_create">Title Create</string>
+    <string name="recent_post">Recent Post</string>
+    <string name="hire_not_found">Hire Not Found</string>
+    <string name="we_cant_find_the_job">We Cant Find The Job!!</string>
+    <string name="hire_not_found_desc">Try to use other keyword to find what your looking for</string>
+    <string name="tag_ui">Tag UI</string>
+    <string name="anime_fanart_ncostume_art">Anime Fanart \nCostume Art</string>
+    <string name="deliver_in_7_days">Deliver in 7 Days</string>
+    <string name="post_job">Post Job</string>
+    <string name="el_gato">El Gato</string>
 
 
 </resources>
