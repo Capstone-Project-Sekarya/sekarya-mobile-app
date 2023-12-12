@@ -51,6 +51,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.FormPortofolioActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.NavigationActivity"
             android:exported="true">
             <intent-filter>

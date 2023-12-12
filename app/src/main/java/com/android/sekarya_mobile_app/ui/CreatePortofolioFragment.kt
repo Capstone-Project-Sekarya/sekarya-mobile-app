@@ -25,10 +25,8 @@ class CreatePortofolioFragment : Fragment() {
 
     override fun onViewCreated(view: View , savedInstanceState: Bundle?) {
         super.onViewCreated(view , savedInstanceState)
-
-        // Menambahkan listener ke button
+        
         binding.btnContinueUpload.setOnClickListener {
-            // Memanggil metode untuk berpindah ke activity target
             goToTargetActivity()
         }
 
