@@ -122,6 +122,8 @@
     <string name="tag_for_this_art">Tag For This Art</string>
     <string name="other_for_this_artist">Other for this Artist</string>
     <string name="order_this_commission">Order this commission</string>
+    <string name="title_hire">Title Hire</string>
+    <string name="title_profile">Title Profile</string>
 
 
 </resources>
