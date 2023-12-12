@@ -23,4 +23,16 @@
         android:label="@string/title_create"
         tools:layout="@layout/fragment_create_portofolio"/>
 
+    <fragment
+        android:id="@+id/navigation_hire"
+        android:name="com.android.sekarya_mobile_app.ui.HireFragment"
+        android:label="@string/title_hire"
+        tools:layout="@layout/fragment_hire"/>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.android.sekarya_mobile_app.ui.UserProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_user_profile"/>
+
 </navigation>

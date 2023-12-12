@@ -57,12 +57,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ProgressBar
-                    android:id="@+id/pb_banner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_centerInParent="true" />
-
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -81,7 +75,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            tools:itemCount="2"
+                            tools:itemCount="3"
                             tools:listitem="@layout/list_banner"/>
 
                     </RelativeLayout>
@@ -100,13 +94,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:paddingHorizontal="5dp"
-                    android:visibility="visible"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="5"
                     tools:itemCount="5"
                     tools:listitem="@layout/list_artist" />
 
             </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:listitem="@layout/list_tag_home"
+                tools:itemCount="10"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         </LinearLayout>
 

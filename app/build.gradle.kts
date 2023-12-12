@@ -51,7 +51,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation ("com.google.android.material:material:1.3.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation ("com.android.databinding:viewbinding:8.1.4")
+    implementation ("com.android.databinding:viewbinding:8.2.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
