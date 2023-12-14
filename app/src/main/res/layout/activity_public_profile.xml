@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".PublicProfileActivity">
+    tools:context=".ui.register.PublicProfileActivity">
 
 
     <ImageView
@@ -92,6 +92,7 @@
         app:layout_constraintVertical_bias="0.402">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/baseline_person_24"/>
@@ -99,11 +100,11 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_nickname"
+        android:id="@+id/ti_age"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
-        android:hint="@string/nickname"
+        android:hint="@string/age"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,58 +112,28 @@
         app:layout_constraintVertical_bias="0.529">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/baseline_person_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:background="@drawable/ed_style"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686">
-
-        <TextView
-            android:id="@+id/pronouns"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:text="@string/pronouns"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.363"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ti_date_of_birth"
-            app:layout_constraintVertical_bias="0.026"></TextView>
-
-        <Spinner
-            android:id="@+id/sp_pronouns"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Spinner>
-    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_bio"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_margin="6dp"
         android:hint="@string/bio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843">
+        app:layout_constraintVertical_bias="0.697">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_bio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ellipsize="none"

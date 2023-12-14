@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.sekarya_mobile_app.databinding.ActivityLogInBinding
+import com.android.sekarya_mobile_app.ui.register.SignUpActivity
 
 class LogInActivity : AppCompatActivity() {
 

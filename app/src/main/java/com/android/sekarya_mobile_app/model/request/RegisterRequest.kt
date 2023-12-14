@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.model
+package com.android.sekarya_mobile_app.model.request
 
 data class RegisterRequest(
     val username: String,

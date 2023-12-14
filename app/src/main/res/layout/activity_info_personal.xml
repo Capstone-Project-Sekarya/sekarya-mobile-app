@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".InfoPersonalActivity">
+    tools:context=".ui.register.InfoPersonalActivity">
 
     <ImageView
         android:id="@+id/iv_back"
@@ -91,6 +91,7 @@
         app:layout_constraintVertical_bias="0.402">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/baseline_person_24"/>
@@ -110,6 +111,7 @@
         app:layout_constraintVertical_bias="0.544">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_phone"/>
@@ -151,6 +153,7 @@
                 android:text="@string/date_of_birth"
                 android:textSize="16dp"
                 android:textStyle="bold"
+                android:onClick="showDatePicker"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.363"
@@ -159,6 +162,7 @@
                 app:layout_constraintVertical_bias="0.026"></TextView>
 
             <TextView
+                android:id="@+id/tv_dateFormat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

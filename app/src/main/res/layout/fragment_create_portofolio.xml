@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="@+id/add">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_upload_foto"
+            android:id="@+id/btn_upload_art"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,8 +112,11 @@
             app:strokeColor="?attr/colorPrimary" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_upload_url"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:singleLine="true"
             android:text="@string/upload_your_human_artwork"
             android:textStyle="bold"></TextView>
 
