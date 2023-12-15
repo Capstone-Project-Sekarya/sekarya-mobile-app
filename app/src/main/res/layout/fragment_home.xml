@@ -57,30 +57,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_banner"
+                    android:layout_width="400dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none"
-                    android:visibility="visible">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_banner"
-                            android:layout_width="400dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            tools:itemCount="3"
-                            tools:listitem="@layout/list_banner"/>
-
-                    </RelativeLayout>
-
-                </HorizontalScrollView>
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/list_banner"/>
 
             </RelativeLayout>
 
@@ -92,11 +77,10 @@
                     android:id="@+id/rv_artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="5dp"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="5"
-                    tools:itemCount="5"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="9"
                     tools:listitem="@layout/list_artist" />
 
             </RelativeLayout>

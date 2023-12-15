@@ -125,5 +125,11 @@
     <string name="title_hire">Title Hire</string>
     <string name="title_profile">Title Profile</string>
 
-
+    <!-- Dummy String Home -->
+    <string name="hamzah">Hamzah</string>
+    <string name="yayat">Yayat</string>
+    <string name="rafli">Rafli</string>
+    <string name="nearl">Nearl</string>
+    <string name="kirigayayat">Kirigayayat</string>
+    <string name="pio">Pio</string>
 </resources>
