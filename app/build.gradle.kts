@@ -15,13 +15,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-
-        buildConfigField("String", "BASE_URL", "\"https://digitalart-server-backend-5ldp5uf7hq-et.a.run.app/\"")
+        buildConfigField("String", "BASE_URL", "\"https://digitalart-server-backend-5ldp5uf7hq-et.a.run.app\"")
+        buildConfigField("String", "API_KEY", "\"sekaryabackend#800\"")
     }
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -80,6 +80,9 @@ dependencies {
     //    ViewModel dan liveData
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+
+    //    untuk data store
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
 
 

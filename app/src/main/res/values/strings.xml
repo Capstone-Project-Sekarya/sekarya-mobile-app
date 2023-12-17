@@ -125,6 +125,7 @@
     <string name="title_hire">Title Hire</string>
     <string name="title_profile">Title Profile</string>
     <string name="age">Age</string>
+    <string name="job">Job Category</string>
 
 
 </resources>

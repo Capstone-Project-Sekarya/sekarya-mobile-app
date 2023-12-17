@@ -35,7 +35,7 @@
             android:name=".ui.register.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".ui.login.LogInActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
@@ -60,7 +60,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.FormPortofolioActivity"
+            android:name=".ui.createArt.FormPortofolioActivity"
             android:exported="false" />
         <activity
             android:name=".ui.NavigationActivity"

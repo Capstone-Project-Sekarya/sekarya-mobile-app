@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.ui
+package com.android.sekarya_mobile_app.ui.createArt
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -3,7 +3,7 @@ package com.android.sekarya_mobile_app.ui.register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.android.sekarya_mobile_app.LogInActivity
+import com.android.sekarya_mobile_app.ui.login.LogInActivity
 import com.android.sekarya_mobile_app.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -38,11 +38,21 @@ class SignUpActivity : AppCompatActivity() {
         binding.btnSignUp.setOnClickListener(){
             val email = binding.edEmailRegister.text.toString()
             val password = binding.edPasswordRegister.text.toString()
-            val PublicIntent = Intent(this, InfoPersonalActivity::class.java)
-            PublicIntent.putExtra("email", email)
-            PublicIntent.putExtra("password", password)
+            when{
+                email.isEmpty() -> {
+                    binding.edEmailRegister.error = "Kolom tidak boleh kosong"
+                }
+                password.isEmpty() -> {
+                    binding.edPasswordRegister.error = "Kolom tidak boleh kosong"
+                }
+                else -> {
+                    val PublicIntent = Intent(this, InfoPersonalActivity::class.java)
+                    PublicIntent.putExtra("email", email)
+                    PublicIntent.putExtra("password", password)
 //            val InfoPersonalIntent = Intent(this, InfoPersonalActivity::class.java)
-            startActivity(PublicIntent)
+                    startActivity(PublicIntent)
+                }
+            }
         }
     }
 }

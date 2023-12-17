@@ -11,7 +11,7 @@ import android.widget.LinearLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.model.OnboardingPage
-import com.android.sekarya_mobile_app.LogInActivity
+import com.android.sekarya_mobile_app.ui.login.LogInActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
