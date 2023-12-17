@@ -32,9 +32,9 @@ interface ApiService {
     suspend fun addArt(
         @Header("api-key") apiKey: String,
         @Part artPhoto : MultipartBody.Part?,
-        @Part artName : RequestBody? = null,
-        @Part tags :RequestBody? = null,
-        @Part artDescription :RequestBody? = null,
-        @Part userId : RequestBody? = null
+        @Part("artName") artName : RequestBody? = null,
+        @Part ("tags") tags :RequestBody? = null,
+        @Part ("artDescription") artDescription :RequestBody? = null,
+        @Part ("userId") userId : RequestBody? = null
     ): AddArtResponse
 }

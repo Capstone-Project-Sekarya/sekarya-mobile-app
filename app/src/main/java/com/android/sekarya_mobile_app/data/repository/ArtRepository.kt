@@ -33,7 +33,7 @@ class ArtRepository(private val apiService: ApiService,
             val response = apiService.addArt(
                 BuildConfig.API_KEY,
                 artPhoto?.toMultipart(),
-                artName?.toRequestBody("multipart/form-data".toMediaTypeOrNull()),
+                artName?.toRequestBody("text/plain".toMediaTypeOrNull()),
                 tags?.toRequestBody("multipart/form-data".toMediaTypeOrNull()),
                 artDescription?.toRequestBody("multipart/form-data".toMediaTypeOrNull()),
                 preferenceManager.getUserId()?.toRequestBody("multipart/form-data".toMediaTypeOrNull())
@@ -48,7 +48,7 @@ class ArtRepository(private val apiService: ApiService,
     fun File.toMultipart(): MultipartBody.Part {
         return MultipartBody.Part
             .createFormData(
-                name = "photo",
+                name = "artPhoto",
                 filename = this.name,
                 body = this.asRequestBody()
             )

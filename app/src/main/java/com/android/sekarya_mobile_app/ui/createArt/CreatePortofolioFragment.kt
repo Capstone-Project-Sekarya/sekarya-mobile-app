@@ -60,7 +60,7 @@ class CreatePortofolioFragment : Fragment() {
         }
 
         binding.btnSave.setOnClickListener{
-            createViewModel.addArt(imageFile, null, null,null)
+            createViewModel.addArt(imageFile, "ini poto", "tag1","ini desrcription")
         }
 
         createViewModel.creatResult.observe(requireActivity()) { result ->
