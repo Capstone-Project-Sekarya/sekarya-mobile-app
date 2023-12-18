@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -14,6 +14,7 @@
         app:cardUseCompatPadding="true">
 
         <ImageView
+            android:id="@+id/img_card_home"
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:src="@drawable/card_image"
@@ -21,6 +22,7 @@
             android:contentDescription="@string/image_card_home"/>
         
         <ImageView
+            android:id="@+id/btn_bookmark"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_fav"
@@ -29,6 +31,7 @@
             android:layout_gravity="end"/>
         
         <ImageView
+            android:id="@id/img_user"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/creator"
@@ -36,6 +39,7 @@
             android:contentDescription="@string/image_card_user"/>
 
         <TextView
+            android:id="@+id/user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/example_name"

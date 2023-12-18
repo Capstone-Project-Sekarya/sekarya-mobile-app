@@ -133,4 +133,10 @@
     <string name="nearl">Nearl</string>
     <string name="kirigayayat">Kirigayayat</string>
     <string name="pio">Pio</string>
+
+    <!-- Dummy String Tag -->
+    <string name="all">All</string>
+    <string name="news">News</string>
+    <string name="mascot">Mascot</string>
+    <string name="ui">UI</string>
 </resources>

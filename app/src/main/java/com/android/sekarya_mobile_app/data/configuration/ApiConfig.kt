@@ -1,5 +1,6 @@
 package com.android.sekarya_mobile_app.data.configuration
 
+import android.util.Log
 import com.android.sekarya_mobile_app.BuildConfig
 import com.android.sekarya_mobile_app.data.service.ApiService
 import okhttp3.Interceptor

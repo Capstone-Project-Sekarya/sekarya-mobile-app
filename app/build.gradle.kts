@@ -18,6 +18,7 @@ android {
 
 
         buildConfigField("String", "BASE_URL", "\"https://digitalart-server-backend-5ldp5uf7hq-et.a.run.app/\"")
+        buildConfigField("String", "API_KEY", "\"sekaryabackend#800\"")
     }
 
     buildFeatures {
@@ -59,7 +60,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
     testImplementation("junit:junit:4.13.2")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
@@ -80,6 +80,9 @@ dependencies {
     //    ViewModel dan liveData
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+
+    //    untuk data store
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
 
 
