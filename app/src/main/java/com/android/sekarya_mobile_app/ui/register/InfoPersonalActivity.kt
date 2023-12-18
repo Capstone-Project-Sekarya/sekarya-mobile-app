@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import com.android.sekarya_mobile_app.databinding.ActivityInfoPersonalBinding
 import com.android.sekarya_mobile_app.utils.DateConverter
 import com.android.sekarya_mobile_app.utils.DatePickerFragment
@@ -116,16 +117,30 @@ class InfoPersonalActivity : AppCompatActivity(), DatePickerFragment.DialogDateL
             val phoneNumber = binding.edPhone.text.toString()
             val dateOfBirth = DateConverter.convertMillisToString(dueDateMillis)
             val gender = selectedGender
-            val email =intent.getStringExtra("email")
-            val password =intent.getStringExtra("password")
-            val intent = Intent(this, PublicProfileActivity::class.java)
-            intent.putExtra("email", email)
-            intent.putExtra("password", password)
-            intent.putExtra("fullName", fullName)
-            intent.putExtra("phoneNumber", phoneNumber)
-            intent.putExtra("dateOfBirth",dateOfBirth)
-            intent.putExtra("gender",gender)
-            startActivity(intent)
+
+            when{
+                fullName.isEmpty() -> {
+                    binding.edFullName.error = "Kolom tidak boleh kosong"
+                }
+                phoneNumber.isEmpty() -> {
+                    binding.edPhone.error = "Kolom tidak boleh kosong"
+                }
+                dateOfBirth.isEmpty() -> {
+                    Toast.makeText(this, "Pilih Tanggal Lahir", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    val email =intent.getStringExtra("email")
+                    val password =intent.getStringExtra("password")
+                    val intent = Intent(this, PublicProfileActivity::class.java)
+                    intent.putExtra("email", email)
+                    intent.putExtra("password", password)
+                    intent.putExtra("fullName", fullName)
+                    intent.putExtra("phoneNumber", phoneNumber)
+                    intent.putExtra("dateOfBirth",dateOfBirth)
+                    intent.putExtra("gender",gender)
+                    startActivity(intent)
+                }
+            }
         }
 
     }

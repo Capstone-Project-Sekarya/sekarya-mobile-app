@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".LogInActivity">
+    tools:context=".ui.login.LogInActivity">
 
 
     <ImageView
@@ -63,6 +63,7 @@
         app:layout_constraintVertical_bias="0.264">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_email_login"
             android:layout_width="match_parent"
             android:drawableEnd="@drawable/ic_email"
             android:layout_height="wrap_content" />
@@ -83,6 +84,7 @@
         app:layout_constraintVertical_bias="0.03">
 
         <com.android.sekarya_mobile_app.custom_view.EditText
+            android:id="@+id/ed_password_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -230,7 +232,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="9dp"

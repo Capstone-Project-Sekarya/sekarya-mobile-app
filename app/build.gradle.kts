@@ -15,14 +15,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-
-        buildConfigField("String", "BASE_URL", "\"https://digitalart-server-backend-5ldp5uf7hq-et.a.run.app/\"")
+        buildConfigField("String", "BASE_URL", "\"https://digitalart-server-backend-5ldp5uf7hq-et.a.run.app\"")
         buildConfigField("String", "API_KEY", "\"sekaryabackend#800\"")
     }
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {

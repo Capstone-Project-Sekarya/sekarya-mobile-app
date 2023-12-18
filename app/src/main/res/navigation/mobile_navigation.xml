@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_create"
-        android:name="com.android.sekarya_mobile_app.ui.CreatePortofolioFragment"
+        android:name="com.android.sekarya_mobile_app.ui.createArt.CreatePortofolioFragment"
         android:label="@string/title_create"
         tools:layout="@layout/fragment_create_portofolio"/>
 

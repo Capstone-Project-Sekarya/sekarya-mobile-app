@@ -2,16 +2,10 @@ package com.android.sekarya_mobile_app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.findNavController
 import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.databinding.ActivityNavigationBinding
-import com.android.sekarya_mobile_app.databinding.FragmentHomeBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.android.sekarya_mobile_app.ui.createArt.CreatePortofolioFragment
 
 class NavigationActivity : AppCompatActivity() {
 
