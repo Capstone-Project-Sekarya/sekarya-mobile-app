@@ -60,6 +60,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:id="@+id/img_user_fav"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_gravity="bottom"
@@ -67,6 +68,7 @@
                     android:src="@drawable/creator" />
 
                 <TextView
+                    android:id="@+id/tv_art_fav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"

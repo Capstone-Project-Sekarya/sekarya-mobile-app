@@ -146,6 +146,12 @@
     <string name="dreamart">dreamy_art</string>
     <string name="kirigayayat">Kirigayayat</string>
     <string name="jack504">Jack_504</string>
+    <string name="girlart">Girl Art</string>
+    <string name="panic">Some Creatures Panic</string>
+    <string name="john">John Smith</string>
+    <string name="wanderer">The Wanderer</string>
+    <string name="frieren">Devil Killer Frieren</string>
+    <string name="ryo">Lazy Bassist</string>
 
     <!-- Dummy String Tag -->
     <string name="all">All</string>
