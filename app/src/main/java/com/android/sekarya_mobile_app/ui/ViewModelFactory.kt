@@ -27,8 +27,6 @@ class ViewModelFactory (
             modelClass.isAssignableFrom(CreateViewModel::class.java) -> {
                 CreateViewModel(artRepository) as T
             }
-            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
-                HomeViewModel() as T
             modelClass.isAssignableFrom(PredictArtViewModel::class.java) -> {
                 PredictArtViewModel(artPredictRepository) as T
             }

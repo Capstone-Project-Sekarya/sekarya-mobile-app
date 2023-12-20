@@ -1,4 +1,4 @@
-package com.android.sekarya_mobile_app.adapter
+package com.android.sekarya_mobile_app.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

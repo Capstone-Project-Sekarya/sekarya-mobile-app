@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.sekarya_mobile_app.BuildConfig
 import com.android.sekarya_mobile_app.R
-import com.android.sekarya_mobile_app.adapter.HomeAdapter
-import com.android.sekarya_mobile_app.adapter.HomeArtistAdapter
-import com.android.sekarya_mobile_app.adapter.SliderAdapter
-import com.android.sekarya_mobile_app.adapter.TagAdapter
+import com.android.sekarya_mobile_app.ui.adapter.HomeAdapter
+import com.android.sekarya_mobile_app.ui.adapter.HomeArtistAdapter
+import com.android.sekarya_mobile_app.ui.adapter.SliderAdapter
+import com.android.sekarya_mobile_app.ui.adapter.TagAdapter
 import com.android.sekarya_mobile_app.data.configuration.ApiConfig
 import com.android.sekarya_mobile_app.databinding.FragmentHomeBinding
 import com.android.sekarya_mobile_app.model.HomeArtist
@@ -54,10 +54,6 @@ class HomeFragment: Fragment() {
     lateinit var tvname: Array<String>
     lateinit var tvuserName: Array<String>
     lateinit var tag: Array<String>
-
-    private val homeViewModel by viewModels<HomeViewModel> {
-        ViewModelFactory.getInstance(requireContext())
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
