@@ -22,11 +22,13 @@
     <!-- Judul -->
     <TextView
         android:id="@+id/tv_title"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Popup Title"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_below="@id/iv_dialog"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
@@ -35,6 +37,9 @@
     <!-- Deskripsi -->
     <TextView
         android:id="@+id/tv_description"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Popup Description"

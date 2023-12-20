@@ -6,6 +6,7 @@ import com.android.sekarya_mobile_app.data.configuration.ApiConfig
 import com.android.sekarya_mobile_app.data.service.ApiService
 import com.android.sekarya_mobile_app.model.request.AddArtRequest
 import com.android.sekarya_mobile_app.model.response.AddArtResponse
+import com.android.sekarya_mobile_app.model.response.PredictArtResponse
 import com.android.sekarya_mobile_app.model.response.Response
 import com.android.sekarya_mobile_app.utils.PreferenceManager
 import kotlinx.coroutines.flow.Flow
@@ -45,6 +46,24 @@ class ArtRepository(private val apiService: ApiService,
         }
     }
 
+
+    suspend fun predictArt(
+        artPhoto: File?
+    ): Flow<Response<PredictArtResponse>> = flow {
+        val apiService = ApiConfig.getApiService()
+        try {
+            emit(Response.Loading)
+            val response = apiService.predictArt(
+                BuildConfig.API_KEY,
+                artPhoto?.toMultipart()
+            )
+            emit(Response.Success(response))
+        } catch (e: Exception) {
+            Log.e("TAG_ADD_ART", "onFailure: ${e.message.toString()}")
+            emit(Response.Error(e.message.toString()))
+        }
+    }
+
     fun File.toMultipart(): MultipartBody.Part {
         return MultipartBody.Part
             .createFormData(
@@ -53,6 +72,11 @@ class ArtRepository(private val apiService: ApiService,
                 body = this.asRequestBody()
             )
     }
+
+
+
+
+
 
 
     companion object {
