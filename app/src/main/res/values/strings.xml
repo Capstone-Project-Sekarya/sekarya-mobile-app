@@ -92,7 +92,7 @@
     <string name="onboarding_tittle">Welcome to Global Art Exhibition</string>
     <string name="onboarding_description">This app will help you out navigate a both physical and virtual parts of exhibition.</string>
     <string name="register_tittle">Hello there</string>
-    <string name="register_guide">Please enter your email and password to crate an account.</string>
+    <string name="register_guide">Please enter your email and password to create an account.</string>
     <string name="account">Already have an account?</string>
     <string name="personal">Enter personal info</string>
     <string name="fullname">Full Name </string>

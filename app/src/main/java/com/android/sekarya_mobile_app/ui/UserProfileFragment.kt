@@ -6,14 +6,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.sekarya_mobile_app.R
-import com.android.sekarya_mobile_app.databinding.FragmentCreatePortofolioBinding
 import com.android.sekarya_mobile_app.databinding.FragmentUserProfileBinding
-import com.android.sekarya_mobile_app.ui.createArt.FormPortofolioActivity
+import com.android.sekarya_mobile_app.model.Hire
+import com.android.sekarya_mobile_app.model.Profile
+import com.android.sekarya_mobile_app.ui.adapter.HireAdapter
+import com.android.sekarya_mobile_app.ui.adapter.ProfileAdapter
 
 class UserProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentUserProfileBinding
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var profileAdapter: ProfileAdapter
+    private lateinit var profileList: ArrayList<Profile>
+
+    lateinit var imgPorto: Array<Int>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,10 +37,43 @@ class UserProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        setDataPorto()
+        setRvPorto()
+
         binding.btnEditProfile.setOnClickListener(){
             editProfile()
         }
 
+    }
+
+    private fun setRvPorto(){
+        recyclerView = requireView().findViewById(R.id.rv_card_profile)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        recyclerView.setHasFixedSize(true)
+        profileAdapter = ProfileAdapter(profileList)
+        recyclerView.adapter = profileAdapter
+    }
+
+    private fun setDataPorto(){
+        profileList = arrayListOf<Profile>()
+
+        imgPorto = arrayOf(
+            R.drawable.card_image,
+            R.drawable.card_image_2,
+            R.drawable.wanderer,
+            R.drawable.frieren,
+            R.drawable.ryo,
+            R.drawable.card_image,
+            R.drawable.card_image_2,
+            R.drawable.wanderer,
+            R.drawable.frieren,
+            R.drawable.ryo
+        )
+
+        for (i in imgPorto.indices){
+            val porto = Profile(imgPorto[i])
+            profileList.add(porto)
+        }
     }
 
 //    setting page
