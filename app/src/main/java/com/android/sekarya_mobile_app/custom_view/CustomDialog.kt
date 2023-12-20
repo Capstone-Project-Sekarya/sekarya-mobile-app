@@ -3,6 +3,8 @@ package com.android.sekarya_mobile_app.custom_view
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.view.Window
 import android.widget.ImageView
@@ -59,4 +61,13 @@ class CustomDialog(context: Context) : Dialog(context) {
     fun setLoadingIndicatorVisible(visible: Boolean) {
         loadingIndicator.visibility = if (visible) View.VISIBLE else View.GONE
     }
+
+    fun showWithAutoDismiss(delayMillis: Long) {
+
+        // Schedule dismissal after the specified delay
+        Handler(Looper.getMainLooper()).postDelayed({
+            dismiss()
+        }, delayMillis)
+    }
+
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -85,13 +86,14 @@ class FormPortofolioActivity : AppCompatActivity(), Serializable {
 
                         }
                         is Response.Success -> {
-                            Toast.makeText(this, "Berhasil upload gambar.", Toast.LENGTH_SHORT).show()
-                            showCustomDialog("Upload Artwork Successful!","",R.drawable.human_art,false,true,true)
-                            val intent = Intent(this, NavigationActivity::class.java)
-                            startActivity(intent)
+                            showCustomDialog("Upload Artwork Successful!","",R.drawable.human_art,false,true,true,2000)
+                            Handler().postDelayed({
+                                val intent = Intent(this, NavigationActivity::class.java)
+                                startActivity(intent)
+                            }, 3000)
                         }
                         is Response.Error -> {
-                            Toast.makeText(this, "Tidak berhasil upload gambar.", Toast.LENGTH_SHORT).show()
+                            showCustomDialog("Unsuccessful Uploading Art","",R.drawable.ic_rejected,false,true,true,2000)
                         }
 
                         else -> {}
@@ -154,7 +156,8 @@ class FormPortofolioActivity : AppCompatActivity(), Serializable {
         imageResId: Int,
         showLoading: Boolean,
         cancelByTouch: Boolean,
-        cancel : Boolean
+        cancel : Boolean,
+        delay : Long
     ){
         val customDialog = CustomDialog(this)
         customDialog.show()
@@ -164,6 +167,7 @@ class FormPortofolioActivity : AppCompatActivity(), Serializable {
         customDialog.setLoadingIndicatorVisible(showLoading)
         customDialog.setCanceledOnTouchOutside(cancelByTouch)
         customDialog.setCancelable(cancel)
+        customDialog.showWithAutoDismiss(delay)
 
     }
 

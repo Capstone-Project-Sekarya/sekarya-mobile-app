@@ -37,8 +37,9 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:singleLine="false"
         android:text="@string/public_profile_description"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"

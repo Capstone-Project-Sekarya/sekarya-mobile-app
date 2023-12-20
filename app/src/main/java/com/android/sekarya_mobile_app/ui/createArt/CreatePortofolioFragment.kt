@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -76,7 +77,7 @@ class CreatePortofolioFragment : Fragment() {
                     is Response.Loading -> {
 
                         showCustomDialog("Detect Your Art","Please wait...\n" +
-                                "We verify your amazing artwork",R.drawable.ic_detect_art,true,true,true)
+                                "We verify your amazing artwork",R.drawable.ic_detect_art,true,true,true, 3000)
 
                     }
                     is Response.Success -> {
@@ -91,11 +92,10 @@ class CreatePortofolioFragment : Fragment() {
                                 intent.putExtra("IMAGE_URI", selectedImageUri.toString())
                                 startActivity(intent)
                             }
-
-                            showCustomDialog("Your art was Made by Human","Click Continue\n" +
-                                    "for directed you to nextpag",R.drawable.human_art,false,true,true)
-
-
+                            Handler().postDelayed({
+                                showCustomDialog("Your art was Made by Human","Click Continue\n" +
+                                        "for directed you to nextpag",R.drawable.human_art,false,true,true, 6000)
+                            }, 2000)
 
                         } else if (it.data.predicted_class == "AI_GENERATED"){
                             Toast.makeText(requireContext(), "${it.data.predicted_class}.", Toast.LENGTH_SHORT).show()
@@ -103,7 +103,7 @@ class CreatePortofolioFragment : Fragment() {
                                 Toast.makeText(requireContext(), "Upload original gambar", Toast.LENGTH_SHORT).show()
                             }
                             showCustomDialog("AI Generated Detected","Please upload your human art work\n" +
-                                    "We do not accepted AI Generated Art",R.drawable.ic_rejected,false,true,true)
+                                    "We do not accepted AI Generated Art",R.drawable.ic_rejected,false,true,true,3000)
                         }
                         else{
                             Toast.makeText(requireContext(), "Bad Request.", Toast.LENGTH_SHORT).show()
@@ -211,24 +211,26 @@ class CreatePortofolioFragment : Fragment() {
     }
 
 
-        private fun showCustomDialog(
-            title: String,
-            description: String,
-            imageResId: Int,
-            showLoading: Boolean,
-            cancelByTouch: Boolean,
-            cancel : Boolean
-        ){
-            val customDialog = CustomDialog(requireContext())
-            customDialog.show()
-            customDialog.setImageResource(imageResId)
-            customDialog.setTitle(title)
-            customDialog.setDescription(description)
-            customDialog.setLoadingIndicatorVisible(showLoading)
-            customDialog.setCanceledOnTouchOutside(cancelByTouch)
-            customDialog.setCancelable(cancel)
+    private fun showCustomDialog(
+        title: String,
+        description: String,
+        imageResId: Int,
+        showLoading: Boolean,
+        cancelByTouch: Boolean,
+        cancel : Boolean,
+        delay : Long
+    ){
+        val customDialog = CustomDialog(requireContext())
+        customDialog.show()
+        customDialog.setImageResource(imageResId)
+        customDialog.setTitle(title)
+        customDialog.setDescription(description)
+        customDialog.setLoadingIndicatorVisible(showLoading)
+        customDialog.setCanceledOnTouchOutside(cancelByTouch)
+        customDialog.setCancelable(cancel)
+        customDialog.showWithAutoDismiss(delay)
 
-        }
+    }
 
 
 
