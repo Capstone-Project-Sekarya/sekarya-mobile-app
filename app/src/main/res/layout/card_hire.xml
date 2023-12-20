@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp"
     android:orientation="vertical">
@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="90dp"
@@ -61,7 +61,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tv_art_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -73,7 +73,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_art" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_deliver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -81,11 +81,11 @@
                 android:fontFamily="@font/inter_semibold"
                 android:text="@string/deliver_in_7_days"
                 android:textSize="10sp"
-                app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintStart_toEndOf="@+id/tv_art_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_post" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tv_portofolio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -95,9 +95,10 @@
                 android:textSize="8sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_card_popup"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_art_title" />
 
             <TextView
+                android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_semibold"
@@ -107,8 +108,8 @@
                 android:layout_marginStart="105dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintStart_toEndOf="@+id/tv_portofolio"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deliver" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

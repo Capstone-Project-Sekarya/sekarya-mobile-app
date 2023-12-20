@@ -37,9 +37,15 @@
     <string name="work_with_the_artist">Work with the Artist</string>
     <string name="captain_art">Captain Art</string>
     <string name="posted_2hr_ago">Posted 2hr Ago</string>
+    <string name="posted_3hr_ago">Posted 3hr Ago</string>
+    <string name="posted_10hr_ago">Posted 10hr Ago</string>
+    <string name="posted_12hr_ago">Posted 12hr Ago</string>
     <string name="people_art_ncostume_art">People Art \nCostume Art</string>
     <string name="remote_friendly">Remote Friendly</string>
     <string name="_100_portofolio">100+ Portofolio</string>
+    <string name="_50_portofolio">50+ Portofolio</string>
+    <string name="_200_portofolio">200+ Portofolio</string>
+    <string name="_150_portofolio">150+ Portofolio</string>
     <string name="start_idr_300k">Start IDR 300K</string>
     <string name="button_favorite">Button Favorite</string>
     <string name="button_bookmark">Button Bookmark</string>
@@ -110,6 +116,9 @@
     <string name="tag_ui">Tag UI</string>
     <string name="anime_fanart_ncostume_art">Anime Fanart \nCostume Art</string>
     <string name="deliver_in_7_days">Deliver in 7 Days</string>
+    <string name="deliver_in_2_days">Deliver in 2 Days</string>
+    <string name="deliver_in_5_days">Deliver in 5 Days</string>
+    <string name="deliver_in_8_days">Deliver in 8 Days</string>
     <string name="post_job">Post Job</string>
     <string name="el_gato">El Gato</string>
     <string name="fanarts">Fanarts</string>
@@ -117,6 +126,9 @@
     <string name="product">Product</string>
     <string name="brand">Brand</string>
     <string name="idr_100k_300k">IDR 100K - 300K</string>
+    <string name="idr_100k_150k">IDR 100K - 150K</string>
+    <string name="idr_200k_300k">IDR 200K - 300K</string>
+    <string name="idr_100k_200k">IDR 100K - 200K</string>
     <string name="hire_detail_desc">I will make a Fanart based on Anime that can costum by your order. The Art was Potrait and Landscape.</string>
     <string name="hire_stock">Delivery : 14 Days \nRevision : 3 Times \nType Files : PSD, AI, JPG, PNG \nSlots Availability : 3</string>
     <string name="tag_for_this_art">Tag For This Art</string>
