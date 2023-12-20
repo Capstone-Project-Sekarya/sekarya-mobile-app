@@ -1,25 +1,40 @@
-package com.android.sekarya_mobile_app.ui
+package com.android.sekarya_mobile_app.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.sekarya_mobile_app.BuildConfig
 import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.adapter.HomeAdapter
 import com.android.sekarya_mobile_app.adapter.HomeArtistAdapter
 import com.android.sekarya_mobile_app.adapter.SliderAdapter
 import com.android.sekarya_mobile_app.adapter.TagAdapter
+import com.android.sekarya_mobile_app.data.configuration.ApiConfig
+import com.android.sekarya_mobile_app.databinding.FragmentHomeBinding
 import com.android.sekarya_mobile_app.model.HomeArtist
 import com.android.sekarya_mobile_app.model.HomeCard
 import com.android.sekarya_mobile_app.model.Slider
 import com.android.sekarya_mobile_app.model.TagList
+import com.android.sekarya_mobile_app.model.response.AllArtResponse
+import com.android.sekarya_mobile_app.model.response.AllArtistResponse
+import com.android.sekarya_mobile_app.ui.ViewModelFactory
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomeFragment: Fragment() {
+
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var adapter: SliderAdapter
     private lateinit var artistAdapter: HomeArtistAdapter
@@ -31,7 +46,7 @@ class HomeFragment: Fragment() {
     private lateinit var sliderList: ArrayList<Slider>
     private lateinit var artistList: ArrayList<HomeArtist>
     private lateinit var tagList: ArrayList<TagList>
-    private lateinit var cardList: ArrayList<HomeCard>
+    private lateinit var cardList: ArrayList<AllArtResponse>
 
     lateinit var imageId: Array<Int>
     lateinit var imageBookmark: Array<Int>
@@ -39,6 +54,10 @@ class HomeFragment: Fragment() {
     lateinit var tvname: Array<String>
     lateinit var tvuserName: Array<String>
     lateinit var tag: Array<String>
+
+    private val homeViewModel by viewModels<HomeViewModel> {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +69,10 @@ class HomeFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,8 +86,30 @@ class HomeFragment: Fragment() {
         setupDataTag()
         setupRvTag()
 
-        setupDataCard()
-        setupRvCard()
+        getAllArt()
+    }
+
+    private fun getAllArt(){
+        val apiService = ApiConfig.getApiService()
+        val retroData = apiService.getAllArt(BuildConfig.API_KEY)
+
+        retroData.enqueue(object : Callback<List<AllArtResponse>>{
+            override fun onResponse(
+                call: Call<List<AllArtResponse>>,
+                response: Response<List<AllArtResponse>>
+            ) {
+                val data = response.body()!!
+                homeAdapter = HomeAdapter(requireContext(), data)
+                recyclerView.adapter = homeAdapter
+                recyclerView.layoutManager = GridLayoutManager(context, 2)
+                Log.d("Data",data.toString())
+            }
+
+            override fun onFailure(call: Call<List<AllArtResponse>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun setRvSlider(){
@@ -90,14 +134,6 @@ class HomeFragment: Fragment() {
         recyclerView.setHasFixedSize(true)
         tagAdapter = TagAdapter(tagList)
         recyclerView.adapter = tagAdapter
-    }
-
-    private fun setupRvCard(){
-        recyclerView = requireView().findViewById(R.id.rv_card_home)
-        recyclerView.layoutManager = GridLayoutManager(context, 2)
-        recyclerView.setHasFixedSize(true)
-        homeAdapter = HomeAdapter(cardList)
-        recyclerView.adapter = homeAdapter
     }
 
     private fun setupDataSlider(){
@@ -133,27 +169,27 @@ class HomeFragment: Fragment() {
         )
 
         tvname = arrayOf(
-            getString(R.string.hamzah),
+            getString(R.string.dryy),
             getString(R.string.yayat),
-            getString(R.string.rafli),
-            getString(R.string.hamzah),
+            getString(R.string.jack),
+            getString(R.string.dryy),
             getString(R.string.yayat),
-            getString(R.string.rafli),
-            getString(R.string.hamzah),
+            getString(R.string.jack),
+            getString(R.string.dryy),
             getString(R.string.yayat),
-            getString(R.string.rafli)
+            getString(R.string.jack)
         )
 
         tvuserName = arrayOf(
-            getString(R.string.nearl),
+            getString(R.string.dreamart),
             getString(R.string.kirigayayat),
-            getString(R.string.pio),
-            getString(R.string.nearl),
+            getString(R.string.jack504),
+            getString(R.string.dreamart),
             getString(R.string.kirigayayat),
-            getString(R.string.pio),
-            getString(R.string.nearl),
+            getString(R.string.jack504),
+            getString(R.string.dreamart),
             getString(R.string.kirigayayat),
-            getString(R.string.pio)
+            getString(R.string.jack504)
         )
 
         for (i in imageId.indices){
@@ -181,59 +217,6 @@ class HomeFragment: Fragment() {
         for (i in tag.indices){
             val tag = TagList(tag[i])
             tagList.add(tag)
-        }
-    }
-
-    private fun setupDataCard(){
-        cardList = arrayListOf<HomeCard>()
-
-        imageId = arrayOf(
-            R.drawable.card_image,
-            R.drawable.card_image_2,
-            R.drawable.card_image,
-            R.drawable.card_image_2,
-            R.drawable.card_image,
-            R.drawable.card_image_2,
-            R.drawable.card_image,
-            R.drawable.card_image_2
-        )
-
-        imageBookmark = arrayOf(
-            R.drawable.ic_fav,
-            R.drawable.ic_fav,
-            R.drawable.ic_fav,
-            R.drawable.ic_fav,
-            R.drawable.ic_fav,
-            R.drawable.ic_fav,
-            R.drawable.ic_fav,
-            R.drawable.ic_fav
-        )
-
-        imageUser = arrayOf(
-            R.drawable.creator,
-            R.drawable.creator_2,
-            R.drawable.creator,
-            R.drawable.creator_2,
-            R.drawable.creator,
-            R.drawable.creator_2,
-            R.drawable.creator,
-            R.drawable.creator_2
-        )
-
-        tvuserName = arrayOf(
-            getString(R.string.nearl),
-            getString(R.string.kirigayayat),
-            getString(R.string.nearl),
-            getString(R.string.kirigayayat),
-            getString(R.string.nearl),
-            getString(R.string.kirigayayat),
-            getString(R.string.nearl),
-            getString(R.string.kirigayayat)
-        )
-
-        for (i in imageId.indices){
-            val card = HomeCard(imageId[i], imageBookmark[i], imageUser[i], tvuserName[i])
-            cardList.add(card)
         }
     }
 }

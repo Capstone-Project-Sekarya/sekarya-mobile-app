@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.android.sekarya_mobile_app.R
 import com.android.sekarya_mobile_app.databinding.ActivityNavigationBinding
 import com.android.sekarya_mobile_app.ui.createArt.CreatePortofolioFragment
+import com.android.sekarya_mobile_app.ui.home.HomeFragment
 
 class NavigationActivity : AppCompatActivity() {
 

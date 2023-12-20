@@ -7,6 +7,7 @@ import com.android.sekarya_mobile_app.data.repository.ArtRepository
 import com.android.sekarya_mobile_app.data.repository.UserRepository
 import com.android.sekarya_mobile_app.di.Injection
 import com.android.sekarya_mobile_app.ui.createArt.CreateViewModel
+import com.android.sekarya_mobile_app.ui.home.HomeViewModel
 import com.android.sekarya_mobile_app.ui.register.AuthViewModel
 
 class ViewModelFactory (
@@ -21,6 +22,9 @@ class ViewModelFactory (
             }
             modelClass.isAssignableFrom(CreateViewModel::class.java) -> {
                 CreateViewModel(artRepository) as T
+            }
+            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
+                HomeViewModel() as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel Class: " + modelClass.name)
         }

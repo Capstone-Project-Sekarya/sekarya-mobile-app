@@ -17,6 +17,7 @@
             android:id="@+id/img_card_home"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/card_image"
             android:layout_margin="10dp"
             android:contentDescription="@string/image_card_home"/>
@@ -35,15 +36,16 @@
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:src="@drawable/creator"
+            android:layout_marginStart="10dp"
             android:layout_gravity="bottom"
             android:contentDescription="@string/image_card_user"/>
 
         <TextView
-            android:id="@+id/user"
+            android:id="@+id/tv_art_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/example_name"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="25dp"
             android:layout_gravity="bottom"
             android:fontFamily="@font/inter_medium"
             android:textSize="11sp"/>
