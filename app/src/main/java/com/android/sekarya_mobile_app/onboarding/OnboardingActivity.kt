@@ -43,6 +43,8 @@ class OnboardingActivity : AppCompatActivity() {
         indicatorLayout = findViewById(R.id.indicatorLayout)
         nextButton = findViewById(R.id.nextButton)
 
+        tabLayout.visibility = View.GONE
+
         // Inisialisasi dan menghubungkan TabLayout dengan ViewPager2
         TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
 

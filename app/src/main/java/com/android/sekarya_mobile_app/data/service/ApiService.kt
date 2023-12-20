@@ -5,6 +5,7 @@ import com.android.sekarya_mobile_app.model.request.LoginRequest
 import com.android.sekarya_mobile_app.model.request.RegisterRequest
 import com.android.sekarya_mobile_app.model.response.AddArtResponse
 import com.android.sekarya_mobile_app.model.response.LoginResponse
+import com.android.sekarya_mobile_app.model.response.PredictArtResponse
 import com.android.sekarya_mobile_app.model.response.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -37,4 +38,12 @@ interface ApiService {
         @Part ("artDescription") artDescription :RequestBody? = null,
         @Part ("userId") userId : RequestBody? = null
     ): AddArtResponse
+
+    @POST("/predict")
+    @Multipart
+    suspend fun predictArt(
+        @Header("api-key") apiKey: String,
+        @Part artPhoto : MultipartBody.Part?,
+    ): PredictArtResponse
+
 }

@@ -20,6 +20,7 @@
         app:layout_constraintVertical_bias="1.0"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     <TextView
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
@@ -42,8 +43,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08">
+
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.019">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_user"
@@ -126,77 +128,63 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24"></TextView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_fanarts"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="80dp"
-        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.0"></TextView>
+
+    <LinearLayout
+        android:id="@+id/tag"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="Fanarts"
-        android:textSize="10sp"
-        app:cornerRadius="16dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_illustration"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:singleLine="true"
-        android:text="Illustration"
-        android:textSize="10sp"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.026">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_product"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:singleLine="true"
-        android:text="Design"
-        android:textSize="10sp"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/fanarts"
+            android:textSize="10sp"
+            app:cornerRadius="16dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_brand"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:singleLine="true"
-        android:text="Brand"
-        android:textSize="10sp"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="@string/illustrations"
+            android:textSize="10sp"
+            app:cornerRadius="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="@string/product"
+            android:textSize="10sp"
+            app:cornerRadius="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="@string/brand"
+            android:textSize="10sp"
+            app:cornerRadius="16dp" />
+
+    </LinearLayout>
 
     <View
         android:id="@+id/view2"
@@ -205,10 +193,10 @@
         android:background="?android:attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintTop_toBottomOf="@id/tag"
+        app:layout_constraintVertical_bias="0.031" />
 
     <LinearLayout
         android:id="@+id/content"

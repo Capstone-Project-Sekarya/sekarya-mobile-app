@@ -33,7 +33,6 @@ class InfoPersonalActivity : AppCompatActivity(), DatePickerFragment.DialogDateL
 
 
 
-
         back()
         spinnerGender()
         skip()

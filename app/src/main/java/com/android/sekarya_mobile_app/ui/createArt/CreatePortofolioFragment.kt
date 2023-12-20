@@ -14,8 +14,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
+import com.android.sekarya_mobile_app.R
+import com.android.sekarya_mobile_app.custom_view.CustomDialog
 import com.android.sekarya_mobile_app.databinding.FragmentCreatePortofolioBinding
 import com.android.sekarya_mobile_app.model.response.Response
+import com.android.sekarya_mobile_app.ui.NavigationActivity
 import com.android.sekarya_mobile_app.ui.ViewModelFactory
 import com.android.sekarya_mobile_app.ui.login.LogInActivity
 import com.android.sekarya_mobile_app.ui.register.AuthViewModel
@@ -28,10 +31,13 @@ class CreatePortofolioFragment : Fragment() {
 
     private lateinit var binding: FragmentCreatePortofolioBinding
 
+    lateinit var customDialog: CustomDialog
+
     private var selectedImageUri: Uri? = null
     private var imageFile: File? = null
 
-    private val createViewModel by viewModels<CreateViewModel> {
+
+    private val predictArtViewModel by viewModels<PredictArtViewModel> {
         ViewModelFactory.getInstance(requireContext())
     }
 
@@ -46,40 +52,65 @@ class CreatePortofolioFragment : Fragment() {
 
     override fun onViewCreated(view: View , savedInstanceState: Bundle?) {
         super.onViewCreated(view , savedInstanceState)
-        
-        binding.btnContinueUpload.setOnClickListener {
-            nextToFormPortofolio()
-        }
 
         binding.btnUploadArt.setOnClickListener{
             openImagePicker()
         }
 
-        binding.btnContinueUpload.setOnClickListener{
-            goToContinue(selectedImageUri)
-        }
 
         binding.btnSave.setOnClickListener{
-            createViewModel.addArt(imageFile, "ini poto", "tag1","ini desrcription")
+            predictArtViewModel.predictArt(imageFile)
         }
 
-        createViewModel.creatResult.observe(requireActivity()) { result ->
+        binding.btnCencel.setOnClickListener(){
+            val intent = Intent(activity, NavigationActivity::class.java)
+            startActivity(intent)
+        }
+
+
+//        predict art
+        predictArtViewModel.predictResult.observe(requireActivity()) { result ->
             result.getContentIfNotHandled()?.let {
                 when (it) {
+
                     is Response.Loading -> {
+
+                        showCustomDialog("Detect Your Art","Please wait...\n" +
+                                "We verify your amazing artwork",R.drawable.ic_detect_art,true,true,true)
 
                     }
                     is Response.Success -> {
+
+
                         if ( it.data.predicted_class == "NON_AI_GENERATED" ){
                             Toast.makeText(requireContext(), "${it.data.predicted_class}", Toast.LENGTH_SHORT).show()
-                            //disini ke intent selanjutnya
-                        }else{
-                            Toast.makeText(requireContext(), "${it.data.predicted_class}", Toast.LENGTH_SHORT).show()
-                        }
+                            Log.d("Image", "Selected image: $selectedImageUri")
+                            binding.btnContinueUpload.setOnClickListener(){
+                                val intent = Intent(activity, FormPortofolioActivity::class.java)
+                                intent.putExtra("IMAGE_FILE", imageFile)
+                                intent.putExtra("IMAGE_URI", selectedImageUri.toString())
+                                startActivity(intent)
+                            }
 
+                            showCustomDialog("Your art was Made by Human","Click Continue\n" +
+                                    "for directed you to nextpag",R.drawable.human_art,false,true,true)
+
+
+
+                        } else if (it.data.predicted_class == "AI_GENERATED"){
+                            Toast.makeText(requireContext(), "${it.data.predicted_class}.", Toast.LENGTH_SHORT).show()
+                            binding.btnContinueUpload.setOnClickListener(){
+                                Toast.makeText(requireContext(), "Upload original gambar", Toast.LENGTH_SHORT).show()
+                            }
+                            showCustomDialog("AI Generated Detected","Please upload your human art work\n" +
+                                    "We do not accepted AI Generated Art",R.drawable.ic_rejected,false,true,true)
+                        }
+                        else{
+                            Toast.makeText(requireContext(), "Bad Request.", Toast.LENGTH_SHORT).show()
+                        }
                     }
                     is Response.Error -> {
-                        Toast.makeText(requireContext(), "Tidak berhasil upload foto.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Tidak berhasil upload gambar.", Toast.LENGTH_SHORT).show()
                     }
 
                     else -> {}
@@ -87,12 +118,8 @@ class CreatePortofolioFragment : Fragment() {
 
             }
 
-            }
-    }
+        }
 
-    private fun nextToFormPortofolio() {
-        val intent = Intent(activity, FormPortofolioActivity::class.java)
-        startActivity(intent)
     }
 
 
@@ -107,16 +134,9 @@ class CreatePortofolioFragment : Fragment() {
         }
     }
     private fun openImagePicker() {
-        // Membuka pemilih gambar
         pickImage.launch("image/*")
     }
 
-//    mengirim gambar ke activity form
-    private fun goToContinue(imageUrl: Uri?) {
-    val intent = Intent(activity, FormPortofolioActivity::class.java)
-    intent.putExtra("IMAGE_URL", imageUrl)
-    startActivity(intent)
-    }
 
     fun Context.getFileFromUri(contentUri: Uri?): File? {
         val fileName: String = getFileName(contentUri) ?: ""
@@ -189,4 +209,30 @@ class CreatePortofolioFragment : Fragment() {
         }
         return count
     }
+
+
+        private fun showCustomDialog(
+            title: String,
+            description: String,
+            imageResId: Int,
+            showLoading: Boolean,
+            cancelByTouch: Boolean,
+            cancel : Boolean
+        ){
+            val customDialog = CustomDialog(requireContext())
+            customDialog.show()
+            customDialog.setImageResource(imageResId)
+            customDialog.setTitle(title)
+            customDialog.setDescription(description)
+            customDialog.setLoadingIndicatorVisible(showLoading)
+            customDialog.setCanceledOnTouchOutside(cancelByTouch)
+            customDialog.setCancelable(cancel)
+
+        }
+
+
+
+
+
+
 }
